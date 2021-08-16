@@ -1,0 +1,34 @@
+# Reference: https://github.com/rubocop-hq/rubocop/blob/master/config/default.yml
+
+inherit_gem:
+  kit_rubocop_style:
+    - kit_rubocop_style.yml
+
+AllCops:
+
+  Exclude:
+    - '**/Gemfile.lock'
+    - '**/db/*.rb'
+
+# ------------------------------------------------------------------------------
+
+# Note: re-add config/default.yml parameters for nested spec directories.
+#   Weirdly enough this is only applied when specifying the config file with `rubocop --config .rubocop.yml`
+
+Naming/PredicateName:
+  Exclude:
+    - 'libraries/*/spec/**/*'
+
+Style/Documentation:
+  Exclude:
+    - 'libraries/*/spec/**/*'
+
+Style/DocumentationMethod:
+  Exclude:
+    - 'libraries/*/spec/**/*'
+
+Style/NumericPredicate:
+  Exclude:
+    - 'libraries/*/spec/**/*'
+
+# ------------------------------------------------------------------------------
