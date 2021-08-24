@@ -28,6 +28,16 @@
 !/log/.keep
 !/tmp/.keep
 
+/apps/*/log/*
+/apps/*/tmp/*
+!/apps/*/log/.keep
+!/apps/*/tmp/.keep
+
+/domains/*/log/*
+/domains/*/tmp/*
+!/domains/*/log/.keep
+!/domains/*/tmp/.keep
+
 # Ignore uploaded files in development
 /storage/*
 
