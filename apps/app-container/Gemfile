@@ -1,0 +1,99 @@
+source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{ repo }.git" }
+
+if (version_ruby = (File.readlines(File.expand_path('.tool-versions', __dir__)).select { |el| el.start_with?('ruby') }[0] || '')&.split('ruby')[1]&.strip)
+  ruby version_ruby
+end
+
+gem 'puma'
+gem 'rails'
+
+# Databases --------------------------------------------------------------------
+
+gem 'pg', '~> 1.1'
+gem 'redis', '~> 4.0'
+
+gem 'activerecord-nulldb-adapter'
+gem 'sidekiq', '~> 6.1', '>= 6.1.2'
+
+gem 'paranoia', '~> 2.1', '>= 2.1.5'
+
+gem 'counter_culture', '~> 2.7'
+
+gem 'annotate'
+
+# Assets management ------------------------------------------------------------
+
+gem 'sass-rails', '>= 6'
+gem 'slim-rails'
+
+gem 'view_component', require: 'view_component/engine'
+
+gem 'rack-cors', require: 'rack/cors'
+
+# Analytics --------------------------------------------------------------------
+
+#gem 'analytics-ruby', '~> 2.2', '>= 2.2.8'
+
+# Debug ------------------------------------------------------------------------
+
+gem 'newrelic_rpm', '~> 7.2'
+
+group :development, :staging do
+  gem 'bullet', '~> 6.1'
+end
+
+group :development, :test, :staging do
+  gem 'awesome_print', github: 'rubykit/awesome_print', branch: 'feature/custom-nesting'
+
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  gem 'pry'
+
+  gem 'better_errors'
+  gem 'binding_of_caller'
+
+  gem 'rack-mini-profiler', '~> 2.0'
+end
+
+# Specs ------------------------------------------------------------------------
+
+group :development, :test, :staging do
+  gem 'vcr', '~> 6.0'
+end
+
+group :test do
+  gem 'database_cleaner'
+
+  gem 'rspec_junit_formatter' # Needed for Circle
+  gem 'rspec-rails'
+
+  gem 'apparition'
+  gem 'capybara', '>= 2.15'
+end
+
+# Dev mode ---------------------------------------------------------------------
+
+gem 'bootsnap', '>= 1.4.4', require: false
+
+group :development, :staging do
+  gem 'listen', '~> 3.3'
+
+  gem 'spring'
+end
+
+# Others -----------------------------------------------------------------------
+
+gem 'oj', '~> 3.12', '>= 3.12.1'
+
+# Kit --------------------------------------------------------------------------
+
+gem 'kit-dotenv',        git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-dotenv/*.gemspec'
+gem 'kit-dotenv-rails',  git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-dotenv/*.gemspec', require: 'kit/dotenv/rails-now'
+
+gem 'kit-app-container', git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-app-container/*.gemspec'
+gem 'kit-contract',      git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-contract/*.gemspec'
+gem 'kit-domain',        git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-domain/*.gemspec'
+gem 'kit-engine',        git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-engine/*.gemspec'
+gem 'kit-organizer',     git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-organizer/*.gemspec'
+gem 'kit-router',        git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-router/*.gemspec'

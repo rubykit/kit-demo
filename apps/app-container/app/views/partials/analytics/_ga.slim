@@ -1,0 +1,8 @@
+- ga_id = ENV['ANALYTICS_GA_MID']
+- if ga_id && !ga_id.blank?
+  script async=true src="https://www.googletagmanager.com/gtag/js?id=#{ ga_id }"
+  javascript:
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '#{ ga_id }');

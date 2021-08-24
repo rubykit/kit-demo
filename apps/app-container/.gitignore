@@ -13,6 +13,10 @@
 .env.local
 .env.*.local
 
+/Gemfile.*
+!/Gemfile.lock
+
+
 ################################################################################
 #
 # Default Rails .gitignore
@@ -28,15 +32,6 @@
 !/log/.keep
 !/tmp/.keep
 
-/apps/*/log/*
-/apps/*/tmp/*
-!/apps/*/log/.keep
-!/apps/*/tmp/.keep
-/domains/*/log/*
-/domains/*/tmp/*
-!/domains/*/log/.keep
-!/domains/*/tmp/.keep
-
 # Ignore uploaded files in development
 /storage/*
 
@@ -44,10 +39,9 @@
 /yarn-error.log
 
 /public/assets
+
 .byebug_history
 
-# Ignore master key for decrypting credentials and more.
-/config/master.key
 
 ################################################################################
 #
@@ -62,13 +56,6 @@
 /coverage/
 /InstalledFiles
 /pkg/
-/spec/reports/
-/spec/examples.txt
-/test/tmp/
-/test/version_tmp/
-/tmp/
-
-Gemfile.lock
 
 # Used by dotenv library to load environment variables.
 # .env
@@ -94,7 +81,6 @@ build-iPhoneSimulator/
 /_yardoc/
 /doc/
 /rdoc/
-/docs/dist
 
 ## Environment normalization:
 /.bundle/
@@ -164,12 +150,3 @@ bower.json
 
 # Ignore node_modules
 node_modules/
-
-################################################################################
-#
-# OS specific
-#
-################################################################################
-
-# Mac
-.DS_Store

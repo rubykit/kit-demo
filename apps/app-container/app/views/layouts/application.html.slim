@@ -1,0 +1,8 @@
+doctype html
+
+html
+  head
+    = render 'partials/head'
+
+  body class="env-#{ Rails.env } #{ Rails.env.development? ? 'debug' : '' }"
+    = yield

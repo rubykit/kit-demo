@@ -1,0 +1,13 @@
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
+
+require_relative 'config/kit_runtime_config'
+require_relative 'config/application'
+
+Rails.application.load_tasks
+
+import 'tasks/router.rake'
+
+require 'seedbank'
+Seedbank.seeds_root = File.expand_path('db/seeds', __dir__)
+Seedbank.load_tasks if defined?(Seedbank)

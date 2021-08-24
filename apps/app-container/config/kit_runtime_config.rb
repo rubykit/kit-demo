@@ -1,0 +1,1 @@
+KIT_APP_PATHS ||= {}
