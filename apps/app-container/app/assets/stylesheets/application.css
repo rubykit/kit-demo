@@ -2,6 +2,6 @@
 
 = require_self
 
-= require ./theme
+= require kit_demo/main/application
 
 */

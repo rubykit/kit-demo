@@ -13,7 +13,7 @@ class WebController < ::ApplicationController
 
     actions_out = [
       Kit::Router::Services::Adapters::Http::Rails::Request::Export.method(:export_request),
-    ],
+    ]
 
     controller_ctx = {
       rails_request:    self.request,

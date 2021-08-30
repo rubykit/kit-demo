@@ -88,12 +88,18 @@ gem 'oj', '~> 3.12', '>= 3.12.1'
 
 # Kit --------------------------------------------------------------------------
 
-gem 'kit-dotenv',        git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-dotenv/*.gemspec'
-gem 'kit-dotenv-rails',  git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-dotenv/*.gemspec', require: 'kit/dotenv/rails-now'
+gem 'kit-dotenv',          git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-dotenv/*.gemspec'
+gem 'kit-dotenv-rails',    git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-dotenv/*.gemspec', require: 'kit/dotenv/rails-now'
 
-gem 'kit-app-container', git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-app-container/*.gemspec'
-gem 'kit-contract',      git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-contract/*.gemspec'
-gem 'kit-domain',        git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-domain/*.gemspec'
-gem 'kit-engine',        git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-engine/*.gemspec'
-gem 'kit-organizer',     git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-organizer/*.gemspec'
-gem 'kit-router',        git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-router/*.gemspec'
+gem 'kit-app-container',   git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-app-container/*.gemspec'
+gem 'kit-contract',        git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-contract/*.gemspec'
+gem 'kit-domain',          git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-domain/*.gemspec'
+gem 'kit-engine',          git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-engine/*.gemspec'
+gem 'kit-error',           git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-error/*.gemspec'
+gem 'kit-log',             git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-log/*.gemspec'
+gem 'kit-organizer',       git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-organizer/*.gemspec'
+gem 'kit-router',          git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-router/*.gemspec'
+
+gem 'kit_theme_bootstrap', git: 'https://github.com/rubykit/kit_theme_bootstrap', branch: 'main'
+
+gem 'kit_demo-main',       git: 'https://github.com/rubykit/kit_demo', glob: 'domains/kit_demo-main/*.gemspec'

@@ -9,6 +9,15 @@ GIT
 GIT
   remote: https://github.com/rubykit/kit
   revision: 0b5b7468e40433bfbf7af1ca17edd38dd8301613
+  glob: libraries/kit-router/*.gemspec
+  specs:
+    kit-router (0.1.0)
+      oj
+      tabulo (~> 2.6)
+
+GIT
+  remote: https://github.com/rubykit/kit
+  revision: 0b5b7468e40433bfbf7af1ca17edd38dd8301613
   glob: libraries/kit-organizer/*.gemspec
   specs:
     kit-organizer (0.1.0)
@@ -42,11 +51,12 @@ GIT
 GIT
   remote: https://github.com/rubykit/kit
   revision: 0b5b7468e40433bfbf7af1ca17edd38dd8301613
-  glob: libraries/kit-router/*.gemspec
+  glob: libraries/kit-contract/*.gemspec
   specs:
-    kit-router (0.1.0)
-      oj
-      tabulo (~> 2.6)
+    kit-contract (0.1.0)
+      awesome_print
+      concurrent-ruby
+      rails (~> 6.1)
 
 GIT
   remote: https://github.com/rubykit/kit
@@ -68,13 +78,38 @@ GIT
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 0b5b7468e40433bfbf7af1ca17edd38dd8301613
-  glob: libraries/kit-contract/*.gemspec
+  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
+  glob: libraries/kit-log/*.gemspec
   specs:
-    kit-contract (0.1.0)
-      awesome_print
-      concurrent-ruby
-      rails (~> 6.1)
+    kit-log (0.1.0)
+
+GIT
+  remote: https://github.com/rubykit/kit
+  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
+  glob: libraries/kit-error/*.gemspec
+  specs:
+    kit-error (0.1.0)
+
+GIT
+  remote: https://github.com/rubykit/kit_demo
+  revision: 2d63bfefbccc318edec64e9c36abe5de22a72699
+  glob: domains/kit_demo-main/*.gemspec
+  specs:
+    kit_demo-main (0.1.0)
+
+GIT
+  remote: https://github.com/rubykit/kit_theme_bootstrap
+  revision: 2169642a267bd1bbb230ac25ae8e6a55ad2631b0
+  branch: main
+  specs:
+    kit_theme_bootstrap (0.1.0)
+      active_link_to
+      bootstrap (~> 5.1)
+      jquery-rails
+      rails (~> 6.1.4)
+      sass-rails (>= 6)
+      slim-rails
+      view_component
 
 GEM
   remote: https://rubygems.org/
@@ -117,6 +152,9 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_link_to (1.0.5)
+      actionpack
+      addressable
     activeadmin (2.9.0)
       arbre (~> 1.2, >= 1.2.1)
       formtastic (>= 3.1, < 5.0)
@@ -167,6 +205,8 @@ GEM
       ruby2_keywords (>= 0.0.2, < 1.0)
     arkency-command_bus (0.4.0)
       thread_safe
+    autoprefixer-rails (10.3.1.0)
+      execjs (~> 2)
     better_errors (2.9.1)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
@@ -175,6 +215,10 @@ GEM
       debug_inspector (>= 0.0.1)
     bootsnap (1.7.7)
       msgpack (~> 1.0)
+    bootstrap (5.1.0)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 2.9.3, < 3)
+      sassc-rails (>= 2.0.0)
     builder (3.2.4)
     bullet (6.1.5)
       activesupport (>= 3.0.0)
@@ -208,6 +252,7 @@ GEM
       dotenv (= 2.7.6)
       railties (>= 3.2)
     erubi (1.10.0)
+    execjs (2.8.1)
     ffi (1.15.3)
     formtastic (4.0.0)
       actionpack (>= 5.2.0)
@@ -268,6 +313,7 @@ GEM
     paranoia (2.4.3)
       activerecord (>= 4.0, < 6.2)
     pg (1.2.3)
+    popper_js (2.9.3)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -439,8 +485,12 @@ DEPENDENCIES
   kit-dotenv!
   kit-dotenv-rails!
   kit-engine!
+  kit-error!
+  kit-log!
   kit-organizer!
   kit-router!
+  kit_demo-main!
+  kit_theme_bootstrap!
   listen (~> 3.3)
   newrelic_rpm (~> 7.2)
   oj (~> 3.12, >= 3.12.1)
