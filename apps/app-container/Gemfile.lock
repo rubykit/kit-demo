@@ -308,6 +308,8 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.12.3-arm64-darwin)
       racc (~> 1.4)
+    nokogiri (1.12.3-x86_64-linux)
+      racc (~> 1.4)
     oj (3.13.2)
     paint (2.2.1)
     paranoia (2.4.3)
@@ -465,6 +467,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-20
+  x86_64-linux
 
 DEPENDENCIES
   activerecord-nulldb-adapter

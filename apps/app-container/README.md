@@ -13,6 +13,22 @@ be rails s
 BUNDLE_GEMFILE=Gemfile.development be rails s
 ```
 
+# Manual deployment
+
+## Heroku
+
+```
+git subtree push --prefix apps/app-container heroku main
+```
+
+### Clear build cache
+
+- https://help.heroku.com/18PI5RSY/how-do-i-clear-the-build-cache
+
+```
+heroku builds:cache:purge -a kitdemo-production
+```
+
 # Production
 
 ## Migration
