@@ -49,6 +49,24 @@ GIT
 GIT
   remote: https://github.com/rubykit/kit
   revision: 8d30b201a79355f25e47afaaa34531100335cc0a
+  glob: libraries/kit-app-container/*.gemspec
+  specs:
+    kit-app-container (0.1.0)
+
+GIT
+  remote: https://github.com/rubykit/kit
+  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
+  glob: libraries/kit-dotenv/*.gemspec
+  specs:
+    kit-dotenv (0.1.0)
+      dotenv
+    kit-dotenv-rails (0.1.0)
+      dotenv-rails
+      kit-dotenv (= 0.1.0)
+
+GIT
+  remote: https://github.com/rubykit/kit
+  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
   glob: libraries/kit-domain/*.gemspec
   specs:
     kit-domain (0.1.0)
@@ -71,24 +89,6 @@ GIT
       awesome_print
       concurrent-ruby
       rails (~> 6.1)
-
-GIT
-  remote: https://github.com/rubykit/kit
-  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
-  glob: libraries/kit-app-container/*.gemspec
-  specs:
-    kit-app-container (0.1.0)
-
-GIT
-  remote: https://github.com/rubykit/kit
-  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
-  glob: libraries/kit-dotenv/*.gemspec
-  specs:
-    kit-dotenv (0.1.0)
-      dotenv
-    kit-dotenv-rails (0.1.0)
-      dotenv-rails
-      kit-dotenv (= 0.1.0)
 
 GIT
   remote: https://github.com/rubykit/kit_demo
@@ -253,6 +253,13 @@ GEM
       railties (>= 3.2)
     erubi (1.10.0)
     execjs (2.8.1)
+    factory_bot (6.2.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
     ffi (1.15.3)
     formtastic (4.0.0)
       actionpack (>= 5.2.0)
@@ -419,6 +426,8 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    seedbank (0.5.0)
+      rake (>= 10.0)
     sidekiq (6.2.2)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
@@ -482,6 +491,8 @@ DEPENDENCIES
   capybara (>= 2.15)
   counter_culture (~> 2.7)
   database_cleaner
+  factory_bot_rails
+  faker
   kit-app-container!
   kit-contract!
   kit-domain!
@@ -508,6 +519,7 @@ DEPENDENCIES
   rspec-rails
   rspec_junit_formatter
   sass-rails (>= 6)
+  seedbank
   sidekiq (~> 6.1, >= 6.1.2)
   slim-rails
   spring

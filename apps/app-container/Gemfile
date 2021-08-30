@@ -60,6 +60,11 @@ end
 
 group :development, :test, :staging do
   gem 'vcr', '~> 6.0'
+
+  gem 'factory_bot_rails'
+  gem 'faker'
+
+  gem 'seedbank'
 end
 
 group :test do

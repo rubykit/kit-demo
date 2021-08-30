@@ -80,7 +80,7 @@ commands:
       - run:
           name: Run .circleci/heroku-deploy-check.sh
           command: |
-              cd ~/as && ./.circleci/heroku-deploy-check.sh
+              cd ~/kit_demo && ./.circleci/heroku-deploy-check.sh
 
 ####################################################################################################
 ####################################################################################################

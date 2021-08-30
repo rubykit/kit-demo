@@ -16,5 +16,7 @@ load 'rails/tasks/engine.rake'
 Rails.application.load_tasks
 
 require 'seedbank'
-Seedbank.seeds_root = File.expand_path('db/seeds', __dir__)
-Seedbank.load_tasks if defined?(Seedbank)
+if defined?(Seedbank)
+  Seedbank.seeds_root = File.expand_path('db/seeds', __dir__)
+  Seedbank.load_tasks
+end
