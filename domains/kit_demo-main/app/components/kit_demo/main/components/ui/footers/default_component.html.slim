@@ -1,0 +1,35 @@
+footer class="#{ args[:no_border] ? '' : 'border-top' } #{ args[:no_background] ? '' : 'bg-gray-100' }"
+
+  .container.container-max-xl
+    .sp-1
+      .row.justify-content-md-between
+
+        .col-lg-8.mb-4.mb-lg-0
+          a.h4.text-lowercase
+            img.d-inline-block.align-top src=asset_url('kit_demo/main/brand/logo.kit_demo.svg') style='height: 1.2em;'
+            span.text-dark.ms-2.fw-bold
+              = t('kit_demo.main.app.name_parts')[0]
+            span.text-dark.ms-1
+              = t('kit_demo.main.app.name_parts')[1]
+
+          p.mt-2.small
+            | Made with love from sunny LA 🇺🇸 &nbsp;and not so sunny Paris 🇫🇷
+
+        .col-lg-2.col-sm-4.mb-4.mb-lg-0
+          h5.fw-semibold
+            | KitDemo
+          ul.nav.nav-sm.nav-px-0.flex-column
+            li.nav-item
+              a.nav-link href=CONFIG_KIT_DEMO_MAIN[:urls][:kit_demo][:github] target='_blank'
+                | Github
+
+        .col-lg-2.col-sm-4.mb-4.mb-lg-0
+          h5.fw-semibold
+            | Documentation
+          ul.nav.nav-sm.nav-px-0.flex-column
+            li.nav-item
+              a.nav-link href=CONFIG_KIT_DEMO_MAIN[:urls][:kit][:doc] target='_blank'
+                | Kit
+            li.nav-item
+              a.nav-link href=CONFIG_KIT_DEMO_MAIN[:urls][:kit_theme_bootstrap][:doc] target='_blank'
+                | KitThemeBootstrap

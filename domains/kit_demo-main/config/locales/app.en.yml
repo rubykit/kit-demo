@@ -1,0 +1,16 @@
+en:
+
+  kit_demo:
+
+    main:
+
+      app:
+        name: 'KitDemo'
+        name_parts:
+          - Kit
+          - Demo
+
+        description:
+          short: 'An exemple app making use of the RubyKit framework.'
+
+        title: '${kit_demo.main.app.name} - ${kit_demo.main.app.description.short}'

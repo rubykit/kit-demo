@@ -1,0 +1,87 @@
+source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{ repo }.git" }
+
+gemspec name: 'kit_demo-main'
+
+gem 'puma'
+
+gem 'kit-dotenv',       git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-dotenv/*.gemspec'
+gem 'kit-dotenv-rails', git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-dotenv/*.gemspec', require: 'kit/dotenv/rails-now'
+
+# Databases --------------------------------------------------------------------
+
+gem 'paranoia',   require: 'paranoia'
+gem 'sidekiq'  # DEV MODE ? doesn't get loaded otherwise
+
+group :development do
+  gem 'annotate', '~> 2.7', '>= 2.7.4'
+end
+
+# Assets management ------------------------------------------------------------
+
+gem 'sass-rails', '>= 6'
+gem 'slim-rails'
+
+gem 'view_component', require: 'view_component/engine'
+
+gem 'active_link_to', '~> 1.0', '>= 1.0.5'
+
+gem 'rack-cors', require: 'rack/cors'
+
+# Debug ------------------------------------------------------------------------
+
+group :development, :test do
+  gem 'awesome_print'
+  gem 'colorize'
+
+  gem 'better_errors'
+
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'pry-stack_explorer'
+
+  gem 'listen'
+end
+
+# Specs ------------------------------------------------------------------------
+
+group :development, :test, :staging do
+  gem 'vcr', '~> 6.0'
+
+  gem 'factory_bot_rails'
+  gem 'faker'
+
+  gem 'seedbank'
+end
+
+group :test do
+  gem 'database_cleaner'
+
+  gem 'rspec_junit_formatter' # Needed for Circle
+  gem 'rspec-rails'
+
+  gem 'apparition'
+  gem 'capybara', '>= 2.15'
+end
+
+# Others -----------------------------------------------------------------------
+
+gem 'oj', '~> 3.12', '>= 3.12.1'
+
+# Dev --------------------------------------------------------------------------
+
+gem 'kit-app-container', git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-app-container/*.gemspec'
+gem 'kit-contract',      git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-contract/*.gemspec' # DEV MODE
+gem 'kit-doc',           git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-doc/*.gemspec' # DEV MODE
+gem 'kit-domain',        git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-domain/*.gemspec' # DEV MODE
+gem 'kit-engine',        git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-engine/*.gemspec' # DEV MODE
+gem 'kit-error',         git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-error/*.gemspec' # DEV MODE
+gem 'kit-log',           git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-log/*.gemspec' # DEV MODE
+gem 'kit-organizer',     git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-organizer/*.gemspec' # DEV MODE
+gem 'kit-pagination',    git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-pagination/*.gemspec' # DEV MODE
+gem 'kit-router',        git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-router/*.gemspec' # DEV MODE
+
+gem 'kit-dummy-app-container', git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-dummy-app-container/*.gemspec' # DEV MODE
+gem 'kit-rspec-formatter',     git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-rspec-formatter/*.gemspec' # DEV MODE
+
+gem 'kit_theme_bootstrap',     git: 'https://github.com/rubykit/kit_theme_bootstrap', branch: 'main'
