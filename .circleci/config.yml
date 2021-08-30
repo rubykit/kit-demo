@@ -74,6 +74,14 @@ commands:
             paths:
             - << parameters.bundle_path >>
 
+  halt-heroku-deploy-if-no-change:
+    description: "Halt if the subtree was not changed"
+    steps:
+      - run:
+          name: Run .circleci/heroku-deploy-check.sh
+          command: |
+              cd ~/as && ./.circleci/heroku-deploy-check.sh
+
 ####################################################################################################
 ####################################################################################################
 
@@ -130,6 +138,27 @@ jobs:
       - run: 'RAILS_ENV=test bin/rails db:migrate:primary_ops'
       - ruby/run-tests
 
+  # Heroku deploy -------------------------------------------------------------------------------------
+
+  deploy-heroku:
+    description: |
+      Deploy an update to an heroku app
+    executor: ruby
+    working_directory: ~/kit_demo
+    #docker:
+    #  - image: cimg/base:stable
+    parameters:
+      application-name:
+        default: ''
+        description: The heroku app you want to deploy to
+        type: string
+    steps:
+      - checkout-code
+      - halt-heroku-deploy-if-no-change
+      - run:
+          name: Deploy to Heroku
+          command: |
+              git subtree push --prefix apps/app-container https://heroku:$HEROKU_API_KEY@git.heroku.com/<<parameters.application-name>>.git main
 
 ####################################################################################################
 ####################################################################################################
@@ -148,3 +177,12 @@ workflows:
           requires:
             - rails-deps-rb-domain-kit_demo-main
             - rails-deps-js-domain-kit_demo-main
+
+      - deploy-heroku:
+          context: credentials-heroku-kitdemo
+          requires:
+            - rails-rspec-domain-kit_demo-main
+          application-name: kitdemo-production
+          filters:
+            branches:
+              only: main
