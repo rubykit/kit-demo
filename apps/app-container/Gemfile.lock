@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 0b5b7468e40433bfbf7af1ca17edd38dd8301613
+  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
   glob: libraries/kit-router/*.gemspec
   specs:
     kit-router (0.1.0)
@@ -17,64 +17,11 @@ GIT
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 0b5b7468e40433bfbf7af1ca17edd38dd8301613
+  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
   glob: libraries/kit-organizer/*.gemspec
   specs:
     kit-organizer (0.1.0)
       awesome_print
-
-GIT
-  remote: https://github.com/rubykit/kit
-  revision: 0b5b7468e40433bfbf7af1ca17edd38dd8301613
-  glob: libraries/kit-engine/*.gemspec
-  specs:
-    kit-engine (0.1.0)
-      activerecord-nulldb-adapter
-      rails (~> 6.1.0)
-
-GIT
-  remote: https://github.com/rubykit/kit
-  revision: 0b5b7468e40433bfbf7af1ca17edd38dd8301613
-  glob: libraries/kit-domain/*.gemspec
-  specs:
-    kit-domain (0.1.0)
-      activeadmin (~> 2.9.0)
-      activerecord-nulldb-adapter (~> 0.4.0)
-      multiverse (~> 0.2.1)
-      paranoia (~> 2.4, >= 2.4.3)
-      pg (~> 1.2.3)
-      rails (~> 6.1.0)
-      rails_event_store
-      slim-rails
-      view_component (~> 2.30.0)
-
-GIT
-  remote: https://github.com/rubykit/kit
-  revision: 0b5b7468e40433bfbf7af1ca17edd38dd8301613
-  glob: libraries/kit-contract/*.gemspec
-  specs:
-    kit-contract (0.1.0)
-      awesome_print
-      concurrent-ruby
-      rails (~> 6.1)
-
-GIT
-  remote: https://github.com/rubykit/kit
-  revision: 0b5b7468e40433bfbf7af1ca17edd38dd8301613
-  glob: libraries/kit-app-container/*.gemspec
-  specs:
-    kit-app-container (0.1.0)
-
-GIT
-  remote: https://github.com/rubykit/kit
-  revision: 0b5b7468e40433bfbf7af1ca17edd38dd8301613
-  glob: libraries/kit-dotenv/*.gemspec
-  specs:
-    kit-dotenv (0.1.0)
-      dotenv
-    kit-dotenv-rails (0.1.0)
-      dotenv-rails
-      kit-dotenv (= 0.1.0)
 
 GIT
   remote: https://github.com/rubykit/kit
@@ -91,8 +38,61 @@ GIT
     kit-error (0.1.0)
 
 GIT
+  remote: https://github.com/rubykit/kit
+  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
+  glob: libraries/kit-engine/*.gemspec
+  specs:
+    kit-engine (0.1.0)
+      activerecord-nulldb-adapter
+      rails (~> 6.1.0)
+
+GIT
+  remote: https://github.com/rubykit/kit
+  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
+  glob: libraries/kit-app-container/*.gemspec
+  specs:
+    kit-app-container (0.1.0)
+
+GIT
+  remote: https://github.com/rubykit/kit
+  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
+  glob: libraries/kit-dotenv/*.gemspec
+  specs:
+    kit-dotenv (0.1.0)
+      dotenv
+    kit-dotenv-rails (0.1.0)
+      dotenv-rails
+      kit-dotenv (= 0.1.0)
+
+GIT
+  remote: https://github.com/rubykit/kit
+  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
+  glob: libraries/kit-domain/*.gemspec
+  specs:
+    kit-domain (0.1.0)
+      activeadmin (~> 2.9.0)
+      activerecord-nulldb-adapter (~> 0.4.0)
+      multiverse (~> 0.2.1)
+      paranoia (~> 2.4, >= 2.4.3)
+      pg (~> 1.2.3)
+      rails (~> 6.1.0)
+      rails_event_store
+      slim-rails
+      view_component (~> 2.30.0)
+
+GIT
+  remote: https://github.com/rubykit/kit
+  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
+  glob: libraries/kit-contract/*.gemspec
+  specs:
+    kit-contract (0.1.0)
+      awesome_print
+      concurrent-ruby
+      rails (~> 6.1)
+
+GIT
   remote: https://github.com/rubykit/kit_demo
-  revision: 2d63bfefbccc318edec64e9c36abe5de22a72699
+  revision: 7ba7f01a18caa1774fb98ed824504bec2351f1fd
   glob: domains/kit_demo-main/*.gemspec
   specs:
     kit_demo-main (0.1.0)
@@ -213,7 +213,7 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (1.0.0)
       debug_inspector (>= 0.0.1)
-    bootsnap (1.7.7)
+    bootsnap (1.8.1)
       msgpack (~> 1.0)
     bootstrap (5.1.0)
       autoprefixer-rails (>= 9.1.0)
@@ -235,7 +235,7 @@ GEM
     coderay (1.1.3)
     concurrent-ruby (1.1.9)
     connection_pool (2.2.5)
-    counter_culture (2.8.0)
+    counter_culture (2.9.0)
       activerecord (>= 4.2)
       activesupport (>= 4.2)
     crass (1.0.6)
@@ -306,9 +306,9 @@ GEM
       ruby2_keywords (~> 0.0.1)
     newrelic_rpm (7.2.0)
     nio4r (2.5.8)
-    nokogiri (1.12.3-arm64-darwin)
+    nokogiri (1.12.4-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.12.3-x86_64-linux)
+    nokogiri (1.12.4-x86_64-linux)
       racc (~> 1.4)
     oj (3.13.2)
     paint (2.2.1)
@@ -326,7 +326,7 @@ GEM
     rack (2.2.3)
     rack-cors (1.1.1)
       rack (>= 2.0.0)
-    rack-mini-profiler (2.3.2)
+    rack-mini-profiler (2.3.3)
       rack (>= 1.2.0)
     rack-protection (2.1.0)
       rack
