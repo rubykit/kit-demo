@@ -1,0 +1,150 @@
+# References:
+# - https://circleci.com/developer/orbs/orb/medpeer/rails
+# - https://github.com/medpeer-dev/rails-orbs
+# - https://circleci.com/developer/orbs/orb/circleci/ruby
+
+version: 2.1
+
+
+####################################################################################################
+####################################################################################################
+
+executors:
+  ruby:
+    docker:
+      - image: 'circleci/ruby:3.0.1-node-browsers'
+  ruby_with_db:
+    docker:
+      - image: 'circleci/ruby:3.0.1-node-browsers'
+      - image: 'circleci/postgres:12.1-alpine-ram'
+      - image: 'circleci/redis:3.2-alpine'
+    environment:
+      DATABASE_URL: 'postgres://postgres:postgres@127.0.0.1:5432/kit_demo-main_circleci'
+
+
+####################################################################################################
+####################################################################################################
+
+orbs:
+  rails: medpeer/rails@1.2.0
+  ruby:  circleci/ruby@0.2.1
+
+####################################################################################################
+####################################################################################################
+
+commands:
+
+  checkout-code:
+    description: Checking out code
+    steps:
+      - checkout:
+          path: ~/kit_demo
+
+  # The version in orb uses an invalid flag.
+  bundle-install:
+    description: Install gems with Bundler.
+    parameters:
+      bundle_path:
+        default: vendor/bundle
+        description: The location to install gems.
+        type: string
+      key:
+        default: gems-v1
+        description: The cache key prefix.
+        type: string
+      restore_only:
+        default: false
+        description: Whether to skip bundle-install and save_cache steps.
+        type: boolean
+    steps:
+    - restore_cache:
+        keys:
+        - << parameters.key >>-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+        - << parameters.key >>-{{ arch }}-{{ .Branch }}
+        - << parameters.key >>-{{ arch }}
+    - run: bundle config set path << parameters.bundle_path >>
+    - unless:
+        condition: <<parameters.restore_only>>
+        steps:
+        - run: gem install bundler -v 2.2.21
+        - run: bundle _2.2.21_ install --jobs=4
+        - save_cache:
+            key: << parameters.key >>-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile.lock"
+              }}
+            paths:
+            - << parameters.bundle_path >>
+
+####################################################################################################
+####################################################################################################
+
+jobs:
+
+  # Domain: kit_demo-main --------------------------------------------------------------------------
+
+  rails-deps-rb-domain-kit_demo-main:
+    executor: ruby
+    working_directory: ~/kit_demo/domains/kit_demo-main
+    steps:
+      - checkout-code
+      - bundle-install:
+          key: gems-domain-kit_demo-main
+
+  rails-deps-js-domain-kit_demo-main:
+    executor: ruby
+    working_directory: ~/kit_demo/domains/kit_demo-main
+    steps:
+      - checkout-code
+      - rails/yarn-install:
+          key: yarn-domain-kit_demo-main
+
+  rails-assets-domain-kit_demo-main:
+    executor: ruby
+    working_directory: ~/kit_demo/domains/kit_demo-main
+    steps:
+      - checkout-code
+      - bundle-install:
+          key: gems-domain-kit_demo-main
+          restore_only: true
+      - rails/yarn-install:
+          key: yarn-domain-kit_demo-main
+          restore_only: true
+      - rails/assets-precompile:
+          key: assets-domain-kit_demo-main
+
+  rails-rspec-domain-kit_demo-main:
+    executor: ruby_with_db
+    working_directory: ~/kit_demo/domains/kit_demo-main
+    steps:
+      - checkout-code
+      - bundle-install:
+          key: gems-domain-kit_demo-main
+          restore_only: true
+      - rails/yarn-install:
+          key: yarn-domain-kit_demo-main
+          restore_only: true
+      - rails/assets-precompile:
+          key: assets-domain-kit_demo-main
+          restore_only: true
+      - run: 'dockerize -wait tcp://localhost:5432 -timeout 1m'
+      - run: 'RAILS_ENV=test bin/rails db:create:primary_ops'
+      - run: 'RAILS_ENV=test bin/rails db:migrate:primary_ops'
+      - ruby/run-tests
+
+
+####################################################################################################
+####################################################################################################
+
+workflows:
+
+  rspec:
+
+    jobs:
+
+      - rails-deps-rb-domain-kit_demo-main
+
+      - rails-deps-js-domain-kit_demo-main
+
+      - rails-rspec-domain-kit_demo-main:
+          requires:
+            - rails-deps-rb-domain-kit_demo-main
+            - rails-deps-js-domain-kit_demo-main
