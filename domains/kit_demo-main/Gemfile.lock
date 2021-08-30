@@ -121,7 +121,7 @@ GIT
 
 GIT
   remote: https://github.com/rubykit/kit_theme_bootstrap
-  revision: cc690f183e59116d8b5712a988512974323d886e
+  revision: 2169642a267bd1bbb230ac25ae8e6a55ad2631b0
   branch: main
   specs:
     kit_theme_bootstrap (0.1.0)
