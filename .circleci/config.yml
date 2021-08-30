@@ -66,8 +66,8 @@ commands:
     - unless:
         condition: <<parameters.restore_only>>
         steps:
-        - run: gem install bundler -v 2.2.21
-        - run: bundle _2.2.21_ install --jobs=4
+        - run: gem install bundler -v 2.2.22
+        - run: bundle _2.2.22_ install --jobs=4
         - save_cache:
             key: << parameters.key >>-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile.lock"
               }}

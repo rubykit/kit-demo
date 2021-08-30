@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 0b5b7468e40433bfbf7af1ca17edd38dd8301613
+  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
   glob: libraries/kit-dotenv/*.gemspec
   specs:
     kit-dotenv (0.1.0)
@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 0b5b7468e40433bfbf7af1ca17edd38dd8301613
+  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
   glob: libraries/kit-contract/*.gemspec
   specs:
     kit-contract (0.1.0)
@@ -21,21 +21,21 @@ GIT
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 0b5b7468e40433bfbf7af1ca17edd38dd8301613
+  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
   glob: libraries/kit-app-container/*.gemspec
   specs:
     kit-app-container (0.1.0)
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 0b5b7468e40433bfbf7af1ca17edd38dd8301613
+  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
   glob: libraries/kit-rspec-formatter/*.gemspec
   specs:
     kit-rspec-formatter (0.1.0)
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 0b5b7468e40433bfbf7af1ca17edd38dd8301613
+  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
   glob: libraries/kit-dummy-app-container/*.gemspec
   specs:
     kit-dummy-app-container (0.1.0)
@@ -45,7 +45,7 @@ GIT
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 0b5b7468e40433bfbf7af1ca17edd38dd8301613
+  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
   glob: libraries/kit-router/*.gemspec
   specs:
     kit-router (0.1.0)
@@ -54,14 +54,14 @@ GIT
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 0b5b7468e40433bfbf7af1ca17edd38dd8301613
+  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
   glob: libraries/kit-pagination/*.gemspec
   specs:
     kit-pagination (0.1.0)
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 0b5b7468e40433bfbf7af1ca17edd38dd8301613
+  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
   glob: libraries/kit-organizer/*.gemspec
   specs:
     kit-organizer (0.1.0)
@@ -69,21 +69,21 @@ GIT
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 0b5b7468e40433bfbf7af1ca17edd38dd8301613
+  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
   glob: libraries/kit-log/*.gemspec
   specs:
     kit-log (0.1.0)
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 0b5b7468e40433bfbf7af1ca17edd38dd8301613
+  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
   glob: libraries/kit-error/*.gemspec
   specs:
     kit-error (0.1.0)
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 0b5b7468e40433bfbf7af1ca17edd38dd8301613
+  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
   glob: libraries/kit-engine/*.gemspec
   specs:
     kit-engine (0.1.0)
@@ -92,7 +92,7 @@ GIT
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 0b5b7468e40433bfbf7af1ca17edd38dd8301613
+  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
   glob: libraries/kit-domain/*.gemspec
   specs:
     kit-domain (0.1.0)
@@ -108,7 +108,7 @@ GIT
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 0b5b7468e40433bfbf7af1ca17edd38dd8301613
+  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
   glob: libraries/kit-doc/*.gemspec
   specs:
     kit-doc (0.1.0)
