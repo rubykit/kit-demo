@@ -9,4 +9,7 @@
 
 = render Kit::Domain::Components::MetaComponent.new(router_request: router_request)
 
+= render Kit::Domain::Components::JsEnvComponent.new(router_request: router_request)
+= render Kit::Domain::Components::Analytics::GoogleComponent.new(router_request: router_request)
+
 link rel="icon" href=image_url(t('kit_demo.main.app.logo'))
