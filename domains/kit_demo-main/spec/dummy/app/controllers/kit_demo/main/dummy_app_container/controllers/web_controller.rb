@@ -11,12 +11,13 @@ class KitDemo::Main::DummyAppContainer::Controllers::WebController < ::ActionCon
   end
 
   def route
-    actions_in = [
+    middlewares_in = [
       Kit::Router::Services::Adapters::Http::Rails::Request::Import.method(:import_request),
+      ->(router_request:) { Kit::Domain::Middlewares::Meta.call(router_request: router_request, i18n_prefix: 'kit_demo.main') },
       request.params[:kit_router_target],
     ]
 
-    actions_out = [
+    middlewares_out = [
       Kit::Router::Services::Adapters::Http::Rails::Request::Export.method(:export_request),
     ]
 
@@ -28,12 +29,12 @@ class KitDemo::Main::DummyAppContainer::Controllers::WebController < ::ActionCon
     }
 
     _, ctx = Kit::Organizer.call(
-      list: actions_in,
+      list: middlewares_in,
       ctx:  controller_ctx,
     )
 
     Kit::Organizer.call(
-      list: actions_out,
+      list: middlewares_out,
       ctx:  controller_ctx.merge(ctx.slice(:router_request, :router_response)),
     )
 

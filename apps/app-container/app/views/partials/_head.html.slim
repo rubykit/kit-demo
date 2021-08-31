@@ -7,4 +7,6 @@
 = javascript_include_tag 'application'
 = javascript_include_tag 'vendor'
 
-link rel="icon" href=image_url('kit_demo/main/brand/logo.kit_demo.svg')
+= render Kit::Domain::Components::MetaComponent.new(router_request: router_request)
+
+link rel="icon" href=image_url(t('kit_demo.main.app.logo'))
