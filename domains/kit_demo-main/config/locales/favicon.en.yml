@@ -1,0 +1,18 @@
+en:
+
+  kit_demo:
+
+    main:
+
+      favicon:
+        svg:  "${kit_demo.main.app.logo}"
+        path: 'kit_demo/main/favicon'
+
+        android_chrome:
+          theme_color: '91cdee'
+
+        safari_pinned_tab:
+          theme_color: '#2a72bc'
+
+        windows:
+          background_color: '#91cdee'

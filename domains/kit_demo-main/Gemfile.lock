@@ -400,6 +400,10 @@ GEM
       activerecord (>= 5.0)
       activerecord-import (>= 1.0.2)
       ruby_event_store (= 2.2.0)
+    rails_real_favicon (0.1.1)
+      json (>= 1.7, < 3)
+      rails
+      rubyzip (~> 2)
     railties (6.1.4.1)
       actionpack (= 6.1.4.1)
       activesupport (= 6.1.4.1)
@@ -464,6 +468,7 @@ GEM
     ruby_event_store-browser (2.2.0)
       ruby_event_store (= 2.2.0)
       sinatra
+    rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
@@ -564,6 +569,7 @@ DEPENDENCIES
   pry-stack_explorer
   puma
   rack-cors
+  rails_real_favicon
   rspec-rails
   rspec_junit_formatter
   rubocop

@@ -12,4 +12,4 @@
 = render Kit::Domain::Components::JsEnvComponent.new(router_request: router_request)
 = render Kit::Domain::Components::Analytics::GoogleComponent.new(router_request: router_request)
 
-link rel="icon" href=image_url(t('kit_demo.main.app.logo'))
+= render Kit::Domain::Components::FaviconComponent.new(router_request: router_request, i18n_prefix: 'kit_demo.main')
