@@ -6,3 +6,8 @@ html
 
   body class="env-#{ Rails.env } #{ Rails.env.development? ? 'debug' : '' }"
     = yield
+
+    - if !content_for?(:flash_displayed)
+      - content_for(:flash_displayed) do
+        .true
+      = render Kit::Domain::Components::FlashComponent.new(router_request: router_request, flash: flash, position: 'top-center')
