@@ -16,21 +16,3 @@ en:
         title: '${kit_demo.main.app.name} - ${kit_demo.main.app.description.short}'
 
         logo: 'kit_demo/main/brand/logo.kit_demo.svg'
-
-      meta:
-        description: '${kit_demo.main.app.description.short}'
-        keywords:
-          - kit
-          - demo
-          - framework
-          - app
-
-        og:
-          description: '${kit_demo.main.meta.description}'
-          image: '${kit_demo.main.app.logo}'
-          title: '${kit_demo.main.app.title}'
-
-        twitter:
-          description: '${kit_demo.main.meta.description}'
-          image: '${kit_demo.main.app.logo}'
-          title: '${kit_demo.main.app.title}'

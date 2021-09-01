@@ -1,0 +1,23 @@
+en:
+
+  kit_demo:
+
+    main:
+
+      meta:
+        description: '${kit_demo.main.app.description.short}'
+        keywords:
+          - kit
+          - demo
+          - framework
+          - app
+
+        og:
+          description: '${kit_demo.main.meta.description}'
+          image: '${kit_demo.main.app.logo}'
+          title: '${kit_demo.main.app.title}'
+
+        twitter:
+          description: '${kit_demo.main.meta.description}'
+          image: '${kit_demo.main.app.logo}'
+          title: '${kit_demo.main.app.title}'
