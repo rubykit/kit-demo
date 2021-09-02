@@ -1,5 +1,5 @@
 module KitDemo::Main::Components::Pages
-  class PageComponent < KitDemo::Main::Components::Component
+  class PageComponent < KitDemo::Main::Components::BaseComponent
 
     attr_reader :csrf_token
 

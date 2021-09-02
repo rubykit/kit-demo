@@ -104,6 +104,7 @@ gem 'kit-error',           git: 'https://github.com/rubykit/kit', glob: 'librari
 gem 'kit-log',             git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-log/*.gemspec'
 gem 'kit-organizer',       git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-organizer/*.gemspec'
 gem 'kit-router',          git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-router/*.gemspec'
+gem 'kit-view_components',   git: 'https://github.com/rubykit/kit', glob: 'libraries/kit-view_components/*.gemspec' # DEV MODE
 
 gem 'kit_theme_bootstrap', git: 'https://github.com/rubykit/kit_theme_bootstrap', branch: 'main'
 

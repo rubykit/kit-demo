@@ -7,9 +7,9 @@
 = javascript_include_tag 'vendor'
 = javascript_include_tag 'application'
 
-= render Kit::Domain::Components::MetaComponent.new(router_request: router_request)
+= render Kit::ViewComponents::Components::MetaComponent.new(router_request: router_request)
 
-= render Kit::Domain::Components::JsEnvComponent.new(router_request: router_request)
-= render Kit::Domain::Components::Analytics::GoogleComponent.new(router_request: router_request)
+= render Kit::ViewComponents::Components::JsEnvComponent.new(router_request: router_request)
+= render Kit::ViewComponents::Components::Analytics::GoogleComponent.new(router_request: router_request)
 
-= render Kit::Domain::Components::FaviconComponent.new(router_request: router_request, i18n_prefix: 'kit_demo.main')
+= render Kit::ViewComponents::Components::FaviconComponent.new(router_request: router_request, i18n_prefix: 'kit_demo.main')

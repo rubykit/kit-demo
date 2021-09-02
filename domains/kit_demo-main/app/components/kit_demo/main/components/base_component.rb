@@ -1,4 +1,4 @@
-class KitDemo::Main::Components::Component < Kit::Domain::Components::Component
+class KitDemo::Main::Components::BaseComponent < Kit::ViewComponents::Components::BaseComponent
 
   attr_reader :errors_list
 

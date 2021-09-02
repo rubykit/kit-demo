@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
+  revision: aefae6289b8c70a8f497a78767a632a02696ae3f
   glob: libraries/kit-dotenv/*.gemspec
   specs:
     kit-dotenv (0.1.0)
@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
+  revision: aefae6289b8c70a8f497a78767a632a02696ae3f
   glob: libraries/kit-contract/*.gemspec
   specs:
     kit-contract (0.1.0)
@@ -21,21 +21,21 @@ GIT
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
+  revision: aefae6289b8c70a8f497a78767a632a02696ae3f
   glob: libraries/kit-app-container/*.gemspec
   specs:
     kit-app-container (0.1.0)
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
+  revision: aefae6289b8c70a8f497a78767a632a02696ae3f
   glob: libraries/kit-rspec-formatter/*.gemspec
   specs:
     kit-rspec-formatter (0.1.0)
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
+  revision: aefae6289b8c70a8f497a78767a632a02696ae3f
   glob: libraries/kit-dummy-app-container/*.gemspec
   specs:
     kit-dummy-app-container (0.1.0)
@@ -45,7 +45,16 @@ GIT
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
+  revision: aefae6289b8c70a8f497a78767a632a02696ae3f
+  glob: libraries/kit-view_components/*.gemspec
+  specs:
+    kit-view_components (0.1.0)
+      slim-rails
+      view_component (~> 2.30.0)
+
+GIT
+  remote: https://github.com/rubykit/kit
+  revision: aefae6289b8c70a8f497a78767a632a02696ae3f
   glob: libraries/kit-router/*.gemspec
   specs:
     kit-router (0.1.0)
@@ -54,14 +63,14 @@ GIT
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
+  revision: aefae6289b8c70a8f497a78767a632a02696ae3f
   glob: libraries/kit-pagination/*.gemspec
   specs:
     kit-pagination (0.1.0)
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
+  revision: aefae6289b8c70a8f497a78767a632a02696ae3f
   glob: libraries/kit-organizer/*.gemspec
   specs:
     kit-organizer (0.1.0)
@@ -69,21 +78,21 @@ GIT
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
+  revision: aefae6289b8c70a8f497a78767a632a02696ae3f
   glob: libraries/kit-log/*.gemspec
   specs:
     kit-log (0.1.0)
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
+  revision: aefae6289b8c70a8f497a78767a632a02696ae3f
   glob: libraries/kit-error/*.gemspec
   specs:
     kit-error (0.1.0)
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
+  revision: aefae6289b8c70a8f497a78767a632a02696ae3f
   glob: libraries/kit-engine/*.gemspec
   specs:
     kit-engine (0.1.0)
@@ -92,7 +101,7 @@ GIT
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
+  revision: aefae6289b8c70a8f497a78767a632a02696ae3f
   glob: libraries/kit-domain/*.gemspec
   specs:
     kit-domain (0.1.0)
@@ -108,7 +117,7 @@ GIT
 
 GIT
   remote: https://github.com/rubykit/kit
-  revision: 8d30b201a79355f25e47afaaa34531100335cc0a
+  revision: aefae6289b8c70a8f497a78767a632a02696ae3f
   glob: libraries/kit-doc/*.gemspec
   specs:
     kit-doc (0.1.0)
@@ -121,7 +130,7 @@ GIT
 
 GIT
   remote: https://github.com/rubykit/kit_theme_bootstrap
-  revision: 2169642a267bd1bbb230ac25ae8e6a55ad2631b0
+  revision: b27dbf165cc0cc2443df5b92414431ea8a47b9a4
   branch: main
   specs:
     kit_theme_bootstrap (0.1.0)
@@ -233,7 +242,7 @@ GEM
     arkency-command_bus (0.4.0)
       thread_safe
     ast (2.4.2)
-    autoprefixer-rails (10.3.1.0)
+    autoprefixer-rails (10.3.3.0)
       execjs (~> 2)
     awesome_print (1.9.2)
     better_errors (2.9.1)
@@ -283,7 +292,7 @@ GEM
       railties (>= 5.0.0)
     faker (2.19.0)
       i18n (>= 1.6, < 2)
-    ffi (1.15.3)
+    ffi (1.15.4)
     formtastic (4.0.0)
       actionpack (>= 5.2.0)
     formtastic_i18n (0.7.0)
@@ -339,7 +348,7 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.12.4-arm64-darwin)
       racc (~> 1.4)
-    oj (3.13.2)
+    oj (3.13.3)
     parallel (1.20.1)
     paranoia (2.4.3)
       activerecord (>= 4.0, < 6.2)
@@ -559,6 +568,7 @@ DEPENDENCIES
   kit-pagination!
   kit-router!
   kit-rspec-formatter!
+  kit-view_components!
   kit_demo-main!
   kit_theme_bootstrap!
   listen

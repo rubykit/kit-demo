@@ -1,4 +1,4 @@
-class KitDemo::Main::Components::Pages::Landing::HomeBlocks::HeroComponent < KitDemo::Main::Components::Component
+class KitDemo::Main::Components::Pages::Landing::HomeBlocks::HeroComponent < KitDemo::Main::Components::BaseComponent
 
   def photo_url
     asset_url('kit_demo/main/stock/pexels-christina-morillo-1181244.jpg')
